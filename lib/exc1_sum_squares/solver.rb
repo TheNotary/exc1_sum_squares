@@ -13,11 +13,11 @@ module Exc1SumSquares
     def calculate_sums(matrix = @matrix)
       validate_matrix
       
-      for i in 0..(@matrix.length-1) do
+      for i in 0...(@matrix.length-1) do
         top_row = @matrix[i]
         bottom_row = @matrix[i+1]
         
-        for j in 0..(top_row.length-1) do
+        for j in 0...(top_row.length-1) do
           a = top_row[j+0] 
           b = top_row[j+1] 
           c = bottom_row[j+0] 
