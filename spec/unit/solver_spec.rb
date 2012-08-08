@@ -63,6 +63,13 @@ describe Exc1SumSquares::Solver do
     end
   end
   
+  it '.sums is an array' do
+    @solver.sums.should be_a_kind_of Array
+  end
+  
+  it '.sums contains an array of the square sums' do
+    @solver.sums[0].should be 15
+  end
   
   
 end

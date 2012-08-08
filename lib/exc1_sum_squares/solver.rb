@@ -5,12 +5,27 @@ module Exc1SumSquares
     
     def initialize(input_matrix = [])
       @matrix = input_matrix
+      @sums = []
       
-      calculate_sums
+      calculate_sums unless input_matrix == []
     end
     
-    def calculate_sums
+    def calculate_sums(matrix = @matrix)
       validate_matrix
+      
+      for i in 0..(@matrix.length-1) do
+        top_row = @matrix[i]
+        bottom_row = @matrix[i+1]
+        
+        for j in 0..(top_row.length-1) do
+          a = top_row[j+0] 
+          b = top_row[j+1] 
+          c = bottom_row[j+0] 
+          d = bottom_row[j+1]
+          @sums << (a+b+c+d)
+        end
+      end
+      
     end
     
     def validate_matrix
