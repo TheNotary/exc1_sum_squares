@@ -10,8 +10,12 @@ module Exc1SumSquares
   end
   
   def self.solve(input)
-    array = input
-    array.gsub!(/(\,)(\S)/, "\\1 \\2")
+    puts '*'
+    p input
+    puts '*'
+    
+    array = input.gsub(/(\,)(\S)/, "\\1 \\2")
+    array = array
     array = YAML::load(input)
     
     s = Exc1SumSquares::Solver.new array
