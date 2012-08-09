@@ -83,6 +83,10 @@ describe Exc1SumSquares::Solver do
     solver.min.should be 10
   end
   
+  it "shouldn't be capable of outputting inaccurate results" do
+    lambda { @solver.sums = [1, 2] }.should raise_error
+  end
+  
   
   describe 'Validates Matrix Input' do
     it 'rejects invalid matricies' do

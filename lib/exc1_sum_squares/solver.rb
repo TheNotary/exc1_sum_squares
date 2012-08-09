@@ -1,19 +1,21 @@
 module Exc1SumSquares
 
   class Solver
-    attr_accessor :sums, :min, :max, :matrix
-    
-    def matrix=(val)
-      @matrix = val
-      calculate_sums
-    end
-    
     def initialize(input_matrix = [])
       @matrix = input_matrix
       @sums = []
       
       calculate_sums unless input_matrix == []
     end
+    
+    attr_accessor :matrix
+    attr_reader :sums, :min, :max
+    
+    def matrix=(val)
+      @matrix = val
+      calculate_sums
+    end
+    
     
     def calculate_sums(matrix = @matrix)
       validate_matrix
