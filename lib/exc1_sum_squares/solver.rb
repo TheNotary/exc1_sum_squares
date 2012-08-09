@@ -3,6 +3,11 @@ module Exc1SumSquares
   class Solver
     attr_accessor :sums, :min, :max, :matrix
     
+    def matrix=(val)
+      @matrix = val
+      calculate_sums
+    end
+    
     def initialize(input_matrix = [])
       @matrix = input_matrix
       @sums = []
@@ -29,6 +34,7 @@ module Exc1SumSquares
     end
     
     def validate_matrix
+      raise 'Invalid Matrix Error: Empty Matrix' if @matrix.empty?
       raise 'Invalid Matrix Error: Lengths' unless is_valid_matrix_size?
       raise 'Invalid Matrix Error: Contents' unless is_valid_matrix_contents?
     end
