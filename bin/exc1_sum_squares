@@ -1,10 +1,19 @@
 #!/usr/bin/env ruby
 
+# The CLI interface is generated thanks to 'thor'.  To use thor in your apps:
+#  1)  Add thor as a dependency in *.gemspecnd do a bundle install
+#  2)  Create a bin folder, and create a bin script that you'd like exposed to your shell path
+#  3)  Put the shebang at the top of the bin script
+#  4)  Requirements - Requir in thor and also your gem's name
+#  5)  *Runner Class - Create a class that inherits from Thor.  
+#  6)  Customing your CLI commands as demonstrated in this file
+#  7)  Start
+
 require 'thor'
 require 'exc1_sum_squares'
 
 class Exc1SumSquaresRunner < Thor
-  default_task :help
+  default_task :help                            # create a default task
   
   desc "help", "Explains the gem's usage"
   def help
