@@ -83,7 +83,7 @@ describe Exc1SumSquares::Solver do
     @solver.max.should be 26
   end
   
-  it 'should work for large arrays' do
+  it 'should work for large arrays', :current => true do    # tagging this test current allows you to single out the test on the command line with '$  rspec --tag current'
     array = [ [1, 4, 6, 1, 9,2000],
               [3, 7, 9, 2, 3,2],
               [9, 2, 0, 4, 6,0],
