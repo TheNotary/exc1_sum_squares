@@ -14,7 +14,6 @@ module Exc1SumSquares
     array.gsub!(/(\,)(\S)/, "\\1 \\2")
     array = YAML::load(input)
     
-
     s = Exc1SumSquares::Solver.new array
     
     output = "Min: #{s.min}\nMax: #{s.max}"

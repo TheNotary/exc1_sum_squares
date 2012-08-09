@@ -1,0 +1,21 @@
+#!/usr/bin/env ruby
+
+require 'thor'
+require 'exc1_sum_squares'
+
+class Exc1SumSquaresRunner < Thor
+  default_task :help
+  
+  desc "help", "Explains the gem's usage"
+  def help
+    Exc1SumSquares.help
+  end
+  
+  desc "solve", "Solves the min and max square values of a 2D array"
+  def solve(input)
+    Exc1SumSquares.solve(input)
+    return 0
+  end
+  
+  
+end
