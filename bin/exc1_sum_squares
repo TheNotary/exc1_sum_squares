@@ -25,4 +25,4 @@ class Exc1SumSquaresRunner < Thor
   
 end
 
-GasRunner.start
+Exc1SumSquaresRunner.start
