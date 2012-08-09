@@ -20,30 +20,23 @@ describe Exc1SumSquares::Solver do
     @solver = Exc1SumSquares::Solver.new @test_array
   end
   
-  it 'should be able to make an object and it should be the right type' do
-    #@solver = Exc1SumSquares::Solver.new @test_array
+  describe @solver do
+    it 'should be able to make an object and it should be the right type' do
+      should be_an_instance_of(Exc1SumSquares::Solver)
+    end
     
-    @solver.should be_an_instance_of(Exc1SumSquares::Solver)
+    it { should respond_to(:min, :max) }
+    
+    it 'should respond to .sums which consists of all summed squares' do
+      should respond_to(:sums)
+    end
+    
+    it 'should have the input matrix exposed' do
+      should respond_to(:matrix)
+      @solver.matrix.should be @test_array
+    end
   end
   
-  
-  it 'should have the input matrix exposed' do
-    @solver.should respond_to(:matrix)
-    @solver.matrix.should be @test_array
-  end
-  
-  it 'should respond to .sums which consists of all summed squares' do
-    @solver.should respond_to(:sums)
-  end
-  
-  
-  it 'responds to .min' do
-    @solver.should respond_to(:min)
-  end
-  
-  it 'responds to .max' do
-    @solver.should respond_to(:max)
-  end
   
   describe 'Validates Matrix Input' do
     it 'rejects invalid matricies' do
