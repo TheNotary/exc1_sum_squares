@@ -17,5 +17,12 @@ RSpec::Core::RakeTask.new(:unit) do |spec|
   spec.rspec_opts = ['--backtrace']
 end
 
+# this is another test, run 'rake spec' and it goes through your spec folder running tests
+RSpec::Core::RakeTask.new(:acceptance) do |spec|
+  #spec.pattern  = 'spec/*/*_spec.rb'
+  spec.pattern = 'spec/acceptance/*_spec.rb'
+  spec.rspec_opts = ['--backtrace']
+end
+
 task :default => :unit
 
