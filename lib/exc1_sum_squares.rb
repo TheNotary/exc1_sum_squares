@@ -21,7 +21,7 @@ module Exc1SumSquares
   end
   
   def self.help
-    puts "This is a CLI that solves something for you... use it like this..."
-    puts "$  exc1_sum_squares '[[1, 2, 3, 4], [5, 6, 7, 8]]"
+    puts "This is a CLI app that solves something for you... use it like this..."
+    puts "$  exc1_sum_squares '[[1, 2, 3, 4], [5, 6, 7, 8]]'"
   end
 end
