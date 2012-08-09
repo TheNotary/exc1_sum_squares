@@ -17,6 +17,8 @@ module Exc1SumSquares
         top_row = @matrix[i]
         bottom_row = @matrix[i+1]
         
+        #require 'pry'; binding.pry
+        require 'ruby-debug';debugger
         for j in 0..(top_row.length-1) do
           a = top_row[j+0] 
           b = top_row[j+1] 
