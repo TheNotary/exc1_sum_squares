@@ -20,4 +20,9 @@ module Exc1SumSquares
     puts output
     return output
   end
+  
+  def self.help
+    puts "This is a CLI that solves something for you... use it like this..."
+    puts "$  exc1_sum_squares '[[1, 2, 3, 4], [5, 6, 7, 8]]"
+  end
 end

@@ -17,5 +17,12 @@ class Exc1SumSquaresRunner < Thor
     return 0
   end
   
+  desc "version", "Prints Gas's version"
+  def version
+    Gas.version
+  end
+  map %w(-v --version) => :version
   
 end
+
+GasRunner.start
