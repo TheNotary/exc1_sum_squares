@@ -1,14 +1,9 @@
 # You place you code within modules.  To call a function from within a module, it looks like this...
 #  Exc1SumSquares::hello();
-require 'exc1_sum_squares/solver.rb'
+require 'exc1_sum_squares/solver'
 require 'yaml'
 
 module Exc1SumSquares
-  
-  def self.hello
-    return "Hello world of gems"
-  end
-  
   def self.solve(input)
     yaml_array = input.gsub(/(\,)(\S)/, "\\1 \\2")
     array = YAML::load(yaml_array)

@@ -1,6 +1,5 @@
-require './spec/spec_helper'
-
-require './lib/exc1_sum_squares.rb'
+require 'spec_helper'
+require 'exc1_sum_squares'
 
 describe Exc1SumSquares do
   it 'should solve a problem' do
