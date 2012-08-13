@@ -33,14 +33,14 @@ module Exc1SumSquares
     def calculate_sums(matrix = @matrix)
       validate_matrix
       
-      @sums = choose_the_top_and_bottom_rows_to_calculate
+      @sums = choose_the_top_and_bottom_rows_to_calculate(@matrix)
     end
     
-    def choose_the_top_and_bottom_rows_to_calculate
+    def choose_the_top_and_bottom_rows_to_calculate(matrix)
       sums = []
-      for i in 0...(@matrix.length-1) do
-        top_row = @matrix[i]
-        bottom_row = @matrix[i+1]
+      for i in 0...(matrix.length-1) do
+        top_row = matrix[i]
+        bottom_row = matrix[i+1]
         
         sums = sum_each_square_set_of_the_chosen_rows(top_row, bottom_row, i, sums)
       end
