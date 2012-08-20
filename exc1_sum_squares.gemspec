@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
   s.authors     = ["TheNotary"]
   s.email       = ["no@email.plz"]
   s.homepage    = ""
-  s.summary     = %q{Just an example gem}
+  s.summary     = %q{This gem is used for sum all squares in a matrix}
   s.description = %q{Just an example gem}
 
   s.rubyforge_project = "exc1_sum_squares"
