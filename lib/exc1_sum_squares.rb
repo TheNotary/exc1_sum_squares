@@ -10,9 +10,7 @@ module Exc1SumSquares
     
     s = Exc1SumSquares::Solver.new array
     
-    output = "Min: #{s.min}\nMax: #{s.max}"
-    puts output
-    return output
+    return s
   end
   
   def self.help

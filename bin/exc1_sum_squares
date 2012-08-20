@@ -22,7 +22,10 @@ class Exc1SumSquaresRunner < Thor
   
   desc "solve", "Solves the min and max square values of a 2D array"
   def solve(input)
-    Exc1SumSquares.solve(input)
+    s = Exc1SumSquares.solve(input)
+
+    output = "Min: #{s.min}\nMax: #{s.max}"
+    puts output
     return 0
   end
   
