@@ -5,10 +5,7 @@ require 'yaml'
 
 module Exc1SumSquares
   def self.solve(input)
-    yaml_array = input.gsub(/(\,)(\S)/, "\\1 \\2")
-    array = YAML::load(yaml_array)
-    
-    s = Exc1SumSquares::Solver.new array
+    s = Exc1SumSquares::Solver.new input
     
     return s
   end
