@@ -10,6 +10,7 @@ describe Exc1SumSquares::Solver do
                     [9, 2, 0, 4, 6],
                     [1, 2, 6, 1, 0] ]
     @solver = Exc1SumSquares::Solver.new @test_array
+    @solver.calculate_sums
   end
   
   describe @solver do
@@ -29,7 +30,6 @@ describe Exc1SumSquares::Solver do
     end
     
     its(:sums) {
-      #require 'pry'; binding.pry
       @solver.sums.should be_a_kind_of Array
     }
     
@@ -47,6 +47,14 @@ describe Exc1SumSquares::Solver do
     it '.max should be the correct answer' do
       @solver.max.should be @solver.sums.max
       @solver.max.should eq(26)
+    end
+    
+    it '.min_slots should contain an array of slots which constitute the minimum of the sums array' do
+      @solver.min_slots.should eq [9]
+    end
+    
+    it '.max_slots should be the correct answer' do
+      @solver.max_slots.should eq [1]
     end
     
   end

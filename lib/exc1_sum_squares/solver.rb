@@ -1,6 +1,6 @@
 module Exc1SumSquares
   class Solver
-    attr_reader :sums, :min, :max, :matrix
+    attr_reader :sums, :min, :max, :matrix, :min_slots, :max_slots
     
     def matrix=(val)
       @matrix = val
@@ -36,7 +36,33 @@ module Exc1SumSquares
       @sums = choose_the_top_and_bottom_rows_to_calculate(@matrix)
       @min = @sums.min
       @max = @sums.max
+      @min_slots = calculate_min_slots(@matrix)
+      @max_slots = calculate_max_slots(@matrix)
     end
+    
+    # Find out which slots of the sums array count as minimum slots
+    def calculate_min_slots(matrix)
+      output = []
+      @sums.each.with_index do |e, i|
+        if e == @min
+          output << i
+        end
+      end
+      #require 'pry';binding.pry
+      output
+    end
+    
+    # Find out which slots of the sums array count as maximum slots
+    def calculate_max_slots(matrix)
+      output = []
+      @sums.each.with_index do |e, i|
+        if e == @max
+          output << i
+        end
+      end
+      output
+    end
+    
     
     def choose_the_top_and_bottom_rows_to_calculate(matrix)
       sums = []
