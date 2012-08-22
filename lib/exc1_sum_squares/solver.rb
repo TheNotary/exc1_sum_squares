@@ -11,12 +11,12 @@ module Exc1SumSquares
     
     def min
       calculate_sums unless @matrix.empty?
-      @sums.min
+      @min
     end
     
     def max
       calculate_sums unless @matrix.empty?
-      @sums.max
+      @max
     end
     
     def sums
@@ -34,6 +34,8 @@ module Exc1SumSquares
       validate_matrix
       
       @sums = choose_the_top_and_bottom_rows_to_calculate(@matrix)
+      @min = @sums.min
+      @max = @sums.max
     end
     
     def choose_the_top_and_bottom_rows_to_calculate(matrix)
