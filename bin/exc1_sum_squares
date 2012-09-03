@@ -21,7 +21,7 @@ class Exc1SumSquaresRunner < Thor
   end
   
   desc "solve", "Solves the min and max square values of a 2D array"
-  def solve(input)
+  def solve(input, output_device = $>)
     # first we need to get the string and convert it into an array...
     yaml_array = input.gsub(/(\,)(\S)/, "\\1 \\2")
     array = YAML::load(yaml_array)
@@ -29,7 +29,7 @@ class Exc1SumSquaresRunner < Thor
     s = Exc1SumSquares.solve(array)
 
     output = "Min: #{s.min}\nMax: #{s.max}"
-    puts output
+    output_device.puts output
     return 0
   end
   

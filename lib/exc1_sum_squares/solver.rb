@@ -28,18 +28,6 @@ module Exc1SumSquares
       @matrix = input_matrix
     end
     
-    
-    
-    def calculate_sums(matrix = @matrix)
-      validate_matrix
-      
-      @sums = choose_the_top_and_bottom_rows_to_calculate(@matrix)
-      @min = @sums.min
-      @max = @sums.max
-      @min_slots = calculate_min_slots(@matrix)
-      @max_slots = calculate_max_slots(@matrix)
-    end
-    
     # Find out which slots of the sums array count as minimum slots
     def calculate_min_slots(matrix)
       output = []
@@ -61,6 +49,17 @@ module Exc1SumSquares
         end
       end
       output
+    end
+    
+    
+    def calculate_sums(matrix = @matrix)
+      validate_matrix
+      
+      @sums = choose_the_top_and_bottom_rows_to_calculate(@matrix)
+      @min = @sums.min
+      @max = @sums.max
+      @min_slots = calculate_min_slots(@matrix)
+      @max_slots = calculate_max_slots(@matrix)
     end
     
     
