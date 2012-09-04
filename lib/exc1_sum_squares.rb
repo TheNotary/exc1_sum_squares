@@ -5,7 +5,7 @@ require 'yaml'
 
 module Exc1SumSquares
   def self.solve(input)
-    s = Exc1SumSquares::Solver.new input
+    s = Solver.new input
     
     return s
   end
