@@ -1,12 +1,13 @@
 #!/usr/bin/env ruby
 
 # The CLI interface is generated thanks to 'thor'.  To use thor in your apps:
-#  1)  Add thor as a dependency in *.gemspecnd do a bundle install
-#  2)  Create a bin folder, and create a bin script that you'd like exposed to your shell path
+#  1)  Add thor as a dependency in *.gemspec and do a bundle install
+
+#  2)  Create a bin folder, and create a bin script that you'd like exposed to your shell path (this file)
 #  3)  Put the shebang at the top of the bin script
-#  4)  Requirements - Requir in thor and also your gem's name
+#  4)  Requirements - Require in thor and also your gem's name
 #  5)  *Runner Class - Create a class that inherits from Thor.  
-#  6)  Customing your CLI commands as demonstrated in this file
+#  6)  Customize your CLI commands as demonstrated in this file
 #  7)  Start
 
 require 'thor'
