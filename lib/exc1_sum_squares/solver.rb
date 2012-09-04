@@ -1,13 +1,13 @@
 module Exc1SumSquares
   class Solver
+    class InvalidMatrix < StandardError; end
+    
     attr_reader :sums, :min, :max, :matrix, :min_slots, :max_slots
     
     def matrix=(val)
       @matrix = val
       calculate_sums
     end
-    
-    # before_filter :calculate_sums, :only => [:min, :max]
     
     def min
       calculate_sums unless @matrix.empty?
@@ -86,9 +86,9 @@ module Exc1SumSquares
     end
     
     def validate_matrix
-      raise 'Invalid Matrix Error: Empty Matrix' if @matrix.empty?
-      raise 'Invalid Matrix Error: Lengths' unless is_valid_matrix_size?
-      raise 'Invalid Matrix Error: Contents' unless is_valid_matrix_contents?
+      raise InvalidMatrix if @matrix.empty?  #'Invalid Matrix Error: Empty Matrix'
+      raise InvalidMatrix unless is_valid_matrix_size? #'Invalid Matrix Error: Lengths' 
+      raise InvalidMatrix unless is_valid_matrix_contents? #'Invalid Matrix Error: Contents' 
     end
     
     def is_valid_matrix_contents?

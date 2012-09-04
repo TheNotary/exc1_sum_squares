@@ -97,7 +97,7 @@ describe Exc1SumSquares::Solver do
       lambda do
         solver = Exc1SumSquares::Solver.new invalid_matrix
         solver.validate_matrix
-      end.should raise_error 'Invalid Matrix Error: Lengths'
+      end.should raise_error Exc1SumSquares::Solver::InvalidMatrix
     end
     
     it 'rejects matricies that contain non-numbers' do
@@ -106,7 +106,7 @@ describe Exc1SumSquares::Solver do
       lambda do
         solver = Exc1SumSquares::Solver.new invalid_matrix
         solver.validate_matrix
-      end.should raise_error 'Invalid Matrix Error: Contents'
+      end.should raise_error Exc1SumSquares::Solver::InvalidMatrix
     end
   end
   
